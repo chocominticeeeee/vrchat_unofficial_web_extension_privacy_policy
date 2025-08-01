@@ -1,0 +1,25 @@
+{
+    "name": "VRChat 非公式Web拡張",
+    "description": "VRChat非公式拡張機能\nVRChat公式サイト(vrchat.com)を使いやすくします。※現段階はMy Avatarsページのみ　created by @Choccomintice",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "author": "choccomintice",
+    "action": {
+        "default_icon": "./images/appIcon.png",
+        "default_popup": "./Popup/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://vrchat.com/*"],
+            "js": ["content-script.js"],
+            "css":["./styles/style.css"]
+        }
+    ],
+    "commands": {},
+    "icons": {
+        "64": "./images/appIcon.png"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' ; object-src 'self';"
+    }
+}
